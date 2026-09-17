@@ -14,5 +14,5 @@ if (!newId || !newSecret) {
 txt = txt.replace(/^GSC_CLIENT_ID=.*$/m, `GSC_CLIENT_ID=${newId}`);
 txt = txt.replace(/^GSC_CLIENT_SECRET=.*$/m, `GSC_CLIENT_SECRET=${newSecret}`);
 
-fs.writeFileSync(envPath, txt, 'utf8');
+fs.writeFileSync(envPath, txt, { encoding: 'utf8', mode: 0o600 });
 console.log('GSC creds updated in .env');
